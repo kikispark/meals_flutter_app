@@ -1,4 +1,15 @@
-enum Complexity { Simple, Challenging, Hard }
+enum Complexity {
+  Simple,
+  Challenging,
+  Hard,
+} //enum means enumeration → a fixed list of named constant values. ,Now you can only use:
+
+// Complexity.Simple
+// Complexity.Challenging
+// Complexity.Hard
+
+// ✅ No typos.
+// ✅ Compiler checks if you’re using the right value.
 
 enum Affordability { Affordable, Pricey, Luxurious }
 
