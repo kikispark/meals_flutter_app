@@ -14,6 +14,13 @@ class CategoryItem extends StatelessWidget {
       arguments: {'id': id, 'title': title},
     );
   }
+  // Navigator.push() → go to new screen.
+
+  // Navigator.pop() → go back.
+
+  // pushNamed & routes → cleaner navigation with route names.
+
+  // arguments → pass data between screens.
 
   @override
   Widget build(BuildContext context) {
