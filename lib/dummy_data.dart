@@ -2,18 +2,78 @@ import 'package:flutter/material.dart';
 import './models/meal.dart';
 import './models/category.dart';
 
-const DUMMY_CATEGORIES = const [
-  Category(id: 'c1', title: 'Italian', color: Colors.purple),
-  Category(id: 'c2', title: 'Quick & Easy', color: Colors.red),
-  Category(id: 'c3', title: 'Hamburgers', color: Colors.orange),
-  Category(id: 'c4', title: 'German', color: Colors.amber),
-  Category(id: 'c5', title: 'Light & Lovely', color: Colors.blue),
-  Category(id: 'c6', title: 'Exotic', color: Colors.green),
-  Category(id: 'c7', title: 'Breakfast', color: Colors.lightBlue),
-  Category(id: 'c8', title: 'Asian', color: Colors.lightGreen),
-  Category(id: 'c9', title: 'French', color: Colors.pink),
-  Category(id: 'c10', title: 'Summer', color: Colors.teal),
+const DUMMY_CATEGORIES = [
+  Category(
+    id: 'c1',
+    title: 'Italian',
+    color: Colors.purple,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c2',
+    title: 'Quick & Easy',
+    color: Colors.red,
+    imageUrl: 'https://www.ndtv.com/cooks/images/aubergine_article.jpg',
+  ),
+  Category(
+    id: 'c3',
+    title: 'Hamburgers',
+    color: Colors.orange,
+    imageUrl:
+        'https://i.ndtvimg.com/i/2016-03/hamburger_625x350_61458112289.jpg',
+  ),
+  Category(
+    id: 'c4',
+    title: 'German',
+    color: Colors.amber,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c5',
+    title: 'Light & Lovely',
+    color: Colors.blue,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c6',
+    title: 'Exotic',
+    color: Colors.green,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c7',
+    title: 'Breakfast',
+    color: Colors.lightBlue,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c8',
+    title: 'Asian',
+    color: Colors.lightGreen,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c9',
+    title: 'French',
+    color: Colors.pink,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
+  Category(
+    id: 'c10',
+    title: 'Summer',
+    color: Colors.teal,
+    imageUrl:
+        'https://c.ndtvimg.com/2024-11/4t2sonm8_pasta_625x300_27_November_24.jpg',
+  ),
 ];
+
 const DUMMY_MEALS = const [
   Meal(
     id: 'm1',

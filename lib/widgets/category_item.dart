@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
-
-  CategoryItem(this.id, this.title, this.color);
+  final String imageUrl;
+  CategoryItem(this.id, this.title, this.color, this.imageUrl);
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
@@ -14,33 +15,29 @@ class CategoryItem extends StatelessWidget {
       arguments: {'id': id, 'title': title},
     );
   }
-  // Navigator.push() → go to new screen.
-
-  // Navigator.pop() → go back.
-
-  // pushNamed & routes → cleaner navigation with route names.
-
-  // arguments → pass data between screens.
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(5),
+
       child: Container(
-        padding: EdgeInsets.all(20),
-        child: Text(title, style: Theme.of(context).textTheme.titleLarge),
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              color.withValues(alpha: 0.7),
-              color,
-            ], //==>alpha (0–1) → this controls transparency (1 = fully visible, 0 = fully transparent)
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+          borderRadius: BorderRadius.circular(5),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl), // or AssetImage(imageUrl) if local
+            fit: BoxFit.cover, // cover the whole container
           ),
-          borderRadius: BorderRadius.circular(15),
+          // borderRadius: BorderRadius.circular(5),
+        ),
+        child: Text(
+          title,
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: Colors.white),
         ),
       ),
     );
