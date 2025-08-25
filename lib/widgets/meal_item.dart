@@ -9,6 +9,8 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeItem;
+
   MealItem({
     required this.id,
     required this.title,
@@ -16,6 +18,7 @@ class MealItem extends StatelessWidget {
     required this.duration,
     required this.complexity,
     required this.affordability,
+    required this.removeItem,
   });
 
   String get complexityText {
@@ -53,11 +56,17 @@ class MealItem extends StatelessWidget {
   void selectMeal(BuildContext context) {
     //==> This function is called when the user taps on the meal item.
     // It navigates to the MealDetailScreen and passes the meal's id and title as arguments.
-    Navigator.of(context).pushNamed(
-      MealDetailScreen.routeName,
-      arguments: id,
-    ); //==> This will navigate to the MealDetailScreen and pass the meal's id and title as arguments.
-  }
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: id)
+        .then(
+          //"When MealDetailScreen closes, run this code.
+          (result) => {
+            if (result != null) {removeItem(result)},
+          },
+        ); //====>Flutter gives you a Future that completes when that screen is popped (closed).
+    // The .then(...) part runs after the user leaves the detail screen
+  } //If you pressed delete → result = mealId
+  // If you just pressed back → result = null
 
   @override
   Widget build(BuildContext context) {
